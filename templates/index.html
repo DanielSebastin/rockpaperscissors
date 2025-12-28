@@ -1,0 +1,11 @@
+<form method="post">
+    <input name="username" placeholder="Your name">
+    <button>Login</button>
+</form>
+
+{% if user %}
+<form action="/create" method="post">
+    <input name="opponent" placeholder="Opponent name">
+    <button>Create Game</button>
+</form>
+{% endif %}

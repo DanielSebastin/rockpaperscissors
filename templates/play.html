@@ -1,0 +1,16 @@
+<h2>Rock Paper Scissors</h2>
+
+{% if not myChoice %}
+<form method="post" action="/choose/{{ game.gameId }}">
+    <button name="choice" value="ROCK">ROCK</button>
+    <button name="choice" value="PAPER">PAPER</button>
+    <button name="choice" value="SCISSORS">SCISSORS</button>
+</form>
+{% else %}
+<p>You chose {{ myChoice }}</p>
+{% endif %}
+
+{% if result %}
+<p>Result: {{ result }}</p>
+<p>Opponent chose {{ opponentChoice }}</p>
+{% endif %}
