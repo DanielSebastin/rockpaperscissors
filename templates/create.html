@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+    <h2>Create Game</h2>
+
+    <form action="/play" method="post">
+        <label>Choose Opponent:</label>
+        <input type="text" id="invitee" name="invitee" class="input" placeholder="e.g. John">
+        <button class="btn">Create Game</button>
+    </form>
+</div>
+
+{% endblock %}
