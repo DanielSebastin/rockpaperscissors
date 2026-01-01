@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card game-card">
+    <h2>Rock Paper Scissors</h2>
+
+    {% if not myChoice %}
+    <p class="subtitle">Choose your move:</p>
+
+    <form method="post" action="/choose/{{ game.gameId }}" class="choices">
+
+        <button class="choice rock" name="choice" value="ROCK">
+            🪨 <span>Rock</span>
+        </button>
+
+        <button class="choice paper" name="choice" value="PAPER">
+            📄 <span>Paper</span>
+        </button>
+
+        <button class="choice scissors" name="choice" value="SCISSORS">
+            ✂️ <span>Scissors</span>
+        </button>
+
+    </form>
+    {% else %}
+    <h3>You chose: <span class="highlight">{{ myChoice }}</span></h3>
+    {% endif %}
+
+    {% if result %}
+        <h2 class="result-title">{{ result }}</h2>
+        <p class="subtitle">Opponent chose: {{ opponentChoice }}</p>
+    {% else %}
+        <p class="waiting">Waiting for opponent...</p>
+        <script src="/static/game.js"></script>
+        <script>pollForUpdate("{{ game.gameId }}")</script>
+    {% endif %}
+
+</div>
+
+{% endblock %}
