@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Play RPS</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <h2 id="title"></h2>
+
+  <input id="player" placeholder="Your name">
+
+  <div>
+    <button onclick="submitChoice('rock')">Rock</button>
+    <button onclick="submitChoice('paper')">Paper</button>
+    <button onclick="submitChoice('scissors')">Scissors</button>
+  </div>
+
+  <h3 id="status"></h3>
+
+  <script>
+    const gameId=new URLSearchParams(window.location.search).get("gameId");
+    document.getElementById("title").innerText="Game ID: "+gameId;
+  </script>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
