@@ -1,13 +1,14 @@
+/* Base layout */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg,#7fc8ff,#ff9a9e);
+    background: linear-gradient(135deg, #7fc8ff, #ff9a9e);
     margin: 0;
     padding: 0;
 }
 
 .nav {
     padding: 15px;
-    background: rgba(255,255,255,0.25);
+    background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
 }
 
@@ -17,21 +18,28 @@ body {
     font-weight: 700;
 }
 
+/* Container */
 .container {
     width: 90%;
     max-width: 450px;
     margin: 40px auto;
 }
 
+/* Cards */
 .card {
     background: white;
     padding: 25px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     margin-bottom: 25px;
 }
 
+.game-card {
+    padding-bottom: 30px;
+}
+
+/* Inputs */
 .input {
     width: 100%;
     padding: 12px;
@@ -40,6 +48,7 @@ body {
     margin-top: 12px;
 }
 
+/* Buttons */
 .btn {
     margin-top: 15px;
     padding: 12px;
@@ -52,8 +61,27 @@ body {
     cursor: pointer;
     font-weight: 600;
 }
+
 .btn:hover {
     background: #005fcc;
+}
+
+.btn-outline {
+    margin-top: 10px;
+    padding: 12px;
+    width: 100%;
+    background: white;
+    color: #ff5757;
+    border: 2px solid #ff5757;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-outline:hover {
+    background: #ff5757;
+    color: white;
 }
 
 /* Game choices */
@@ -80,10 +108,19 @@ body {
     transform: scale(1.08);
 }
 
-.rock { background: #747474; }
-.paper { background: #3aa1ff; }
-.scissors { background: #ff5757; }
+.rock {
+    background: #747474;
+}
 
+.paper {
+    background: #3aa1ff;
+}
+
+.scissors {
+    background: #ff5757;
+}
+
+/* Text helpers */
 .subtitle {
     margin-top: 10px;
     opacity: 0.8;
