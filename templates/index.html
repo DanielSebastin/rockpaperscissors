@@ -1,22 +1,73 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- LOGIN CARD -->
 <div class="card">
     <h2>Login</h2>
     <form method="post">
-        <input name="username" class="input" placeholder="Your name">
+        <input
+            name="username"
+            class="input"
+            placeholder="Your name"
+            required
+        >
         <button class="btn">Login</button>
     </form>
 </div>
 
+<!-- CREATE GAME (ONLY AFTER LOGIN) -->
 {% if user %}
 <div class="card">
-    <h2>Create Game</h2>
+    <h2>Invite Opponent</h2>
+    <p class="subtitle">
+        The game will start once they accept your invite
+    </p>
+
     <form action="/create" method="post">
-        <input name="opponent" class="input" placeholder="Opponent name">
-        <button class="btn">Create Game</button>
+        <input
+            name="opponent"
+            class="input"
+            placeholder="Opponent name"
+            required
+        >
+        <button class="btn">Send Invite</button>
     </form>
 </div>
 {% endif %}
 
+<!-- INCOMING INVITES -->
+{% if invites %}
+<div class="card">
+    <h2>Game Invites</h2>
+
+    {% for game in invites %}
+        <p>
+            <b>{{ game.host }}</b> invited you to play
+        </p>
+
+        <form method="post" action="/respond/{{ game.gameId }}">
+            <button
+                class="btn"
+                name="action"
+                value="accept"
+            >
+                Accept
+            </button>
+
+            <button
+                class="btn btn-outline"
+                name="action"
+                value="reject"
+            >
+                Reject
+            </button>
+        </form>
+
+        <hr>
+    {% endfor %}
+</div>
+{% endif %}
+
 {% endblock %}
+
+    
