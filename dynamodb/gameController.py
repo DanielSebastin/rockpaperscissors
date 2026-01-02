@@ -46,7 +46,14 @@ class GameController:
             result=g["OpponentId"]
 
         self.table.update_item(
-            Key={"GameId":gameId},
-            UpdateExpression="SET Result=:r",
-            ExpressionAttributeValues={":r":result}
-        )
+    Key={'gameId': gameId},
+    UpdateExpression="SET #res = :r",
+    ExpressionAttributeNames={
+        "#res": "Result"
+    },
+    ExpressionAttributeValues={
+        ":r": result
+    }
+)
+
+
