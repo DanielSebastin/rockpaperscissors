@@ -2,12 +2,20 @@
 {% block content %}
 
 <div class="card">
-    <h2>Create Game</h2>
+    <h2>Invite Opponent</h2>
+    <p class="subtitle">
+        The game will start once they accept your invite
+    </p>
 
-    <form action="/play" method="post">
-        <label>Choose Opponent:</label>
-        <input type="text" id="invitee" name="invitee" class="input" placeholder="e.g. John">
-        <button class="btn">Create Game</button>
+    <form action="/create" method="post">
+        <input
+            type="text"
+            name="invitee"
+            class="input"
+            placeholder="Opponent name (e.g. John)"
+            required
+        >
+        <button class="btn">Send Invite</button>
     </form>
 </div>
 
