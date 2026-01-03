@@ -22,7 +22,8 @@ class GameController:
         )
 
     def get_game(self,game_id):
-        return self.table.get_item(game_id)
+        return self.table.get_item(GameId=game_id)
+
 
     def accept_game(self,game_id):
         game=self.get_game(game_id)
