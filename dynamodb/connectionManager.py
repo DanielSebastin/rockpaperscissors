@@ -1,11 +1,11 @@
 # Imports helper functions to connect to DynamoDB and create the Games table
-from .setupDynamoDB          import getDynamoDBConnection, createGamesTable
+from .setupDynamoDB import getDynamoDBConnection, createGamesTable
 
 # Represents a DynamoDB table object
-from boto.dynamodb2.table   import Table
+from boto.dynamodb2.table import Table
 
 # Used to generate unique identifiers (not used directly here but imported for consistency)
-from uuid                   import uuid4
+from uuid import uuid4
 
 
 class ConnectionManager:
